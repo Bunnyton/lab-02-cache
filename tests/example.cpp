@@ -1,10 +1,14 @@
 // Copyright 2021 Galaktionov Andrey <galaktionovaa@student.bmstu.ru>
 
-#include <stdexcept>
 #include <gtest/gtest.h>
+
+#include <stdexcept>
 
 #include "cache_test.hpp"
 
 TEST(Example, EmptyTest) {
-    EXPECT_THROW(example(), std::runtime_error);
+  std::vector<unsigned> cache_size;
+  cache_size.push_back(128);
+  cache_size.push_back(2048);
+  EXPECT_THROW(cache_test(cache_size, 1000, std::cout), std::runtime_error);
 }
