@@ -10,7 +10,7 @@
 
 #define LOT_OF_TYPE 3
 #define STEP 16
-#define K 1000
+#define COEFFICIENT 1024
 
 enum Move_type { right_type = 0, reverse_type = 1, random_type = 2 };
 typedef enum Move_type move_type;

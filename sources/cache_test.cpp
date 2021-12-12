@@ -19,7 +19,7 @@ unsigned* set_of_test(unsigned buff_size, move_type t, unsigned lot_of_iter) {
   if (buff_size == 0) return nullptr;
 
   unsigned lot_of_elements =
-      (buff_size * K / sizeof(unsigned)) / STEP;  // buff size in kib
+      (buff_size * COEFFICIENT / sizeof(unsigned)) / STEP;  // buff size in kb
   if (lot_of_elements == 0) return nullptr;
 
   auto* set_of_elements = new unsigned[lot_of_elements];
@@ -55,8 +55,8 @@ unsigned* set_of_test(unsigned buff_size, move_type t, unsigned lot_of_iter) {
 }
 
 unsigned* make_array(unsigned buff_size) {
-  auto* arr =
-      new unsigned[buff_size * K / sizeof(unsigned)];  // buff size in kib
+  auto* arr = new unsigned[buff_size * COEFFICIENT /
+                           sizeof(unsigned)];  // buff size in kb
   return arr;
 }
 
@@ -82,8 +82,8 @@ void result_out(move_type t, unsigned number,
      << "      input_data:" << std::endl
      << "        buffer_size: " << buffer_size.at(number) << "kib" << std::endl
      << "      results:" << std::endl
-     << "        duration: " << duration * 1000000000 / CLOCKS_PER_SEC << "ns"
-     << std::endl
+     << "        duration: " << duration * 1000000000 / CLOCK_PER_SEC
+     << "ns" << std::endl
      << std::endl;
 }
 
