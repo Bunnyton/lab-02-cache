@@ -17,7 +17,7 @@ typedef enum Move_type move_type;
 
 std::vector<unsigned> buffer_size(std::vector<unsigned>& cache_size);
 
-unsigned* set_of_test(unsign3ed buff_size, move_type t, unsigned lot_of_iter);
+unsigned* set_of_test(unsigned buff_size, move_type t, unsigned lot_of_iter);
 
 unsigned* make_array(unsigned buff_size);
 

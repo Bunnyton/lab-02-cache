@@ -82,7 +82,7 @@ void result_out(move_type t, unsigned number,
      << "      input_data:" << std::endl
      << "        buffer_size: " << buffer_size.at(number) << "kib" << std::endl
      << "      results:" << std::endl
-     << "        duration: " << duration * 1000000000 / CLOCK_PER_SEC
+     << "        duration: " << duration * 1000000000 / CLOCKS_PER_SEC
      << "ns" << std::endl
      << std::endl;
 }
@@ -103,7 +103,7 @@ void cache_test(std::vector<unsigned>& cache_size, unsigned lot_of_iter,
         continue;
       }
       [[maybe_unused]] unsigned* arr = make_array(buff_size.at(j));
-      if (arr == nullptr) throw(std::errc::not_enough_memory);
+      if (arr == nullptr) throw std::errc::not_enough_memory;
 
       for (unsigned k = 0; k < lot_of_iter; ++k)
         helper = arr[set[k]];  // warm up

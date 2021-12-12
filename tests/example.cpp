@@ -1,4 +1,4 @@
-// Copyright 2021 Your Name <your_email>
+// Copyright 2021 Galaktionov Andrey <galaktionovaa@student.bmstu.ru>
 
 #include <stdexcept>
 
