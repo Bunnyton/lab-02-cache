@@ -45,15 +45,15 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 
 target_link_libraries(demo ${PROJECT_NAME})
 
-#if(BUILD_TESTS)
-#  add_executable(tests
-#    # TODO: enum your files and delete this comment
-#    ${CMAKE_CURRENT_SOURCE_DIR}/tests/example.cpp
-#  )
-#  target_link_libraries(tests ${PROJECT_NAME} GTest::gtest_main)
-#  enable_testing()
-#  add_test(NAME unit_tests COMMAND tests)
-#endif()
+if(BUILD_TESTS)
+  add_executable(tests
+    # TODO: enum your files and delete this comment
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/example.cpp
+  )
+  target_link_libraries(tests ${PROJECT_NAME} GTest::gtest_main)
+  enable_testing()
+  add_test(NAME unit_tests COMMAND tests)
+endif()
 
 if(BUILD_COVERAGE)
   set(ENABLE_COVERAGE ON CACHE BOOL "Enable coverage build." FORCE)
